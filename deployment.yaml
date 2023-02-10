@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: onlinejobportal
+  template:
+    metadata:
+      labels:
+        app: onlinejobportal
+    spec:
+      containers:
+        - name: onlinejobportal
+          image: public.ecr.aws/m3q9r3m4/mohamedkather/onlinejobportal:latest
+          ports:
+            - containerPort: 8081

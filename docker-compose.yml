@@ -11,16 +11,16 @@ services:
       - 8081:8081
     depends_on:
       - db
-  #  environment:
-  #    - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/jobportal
-  #    - SPRING_DATASOURCE_USERNAME=postgres
-  #    - SPRING_DATASOURCE_PASSWORD=Kather@123
-  #    - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://jobportal.cbuswp39vcjz.us-east-1.rds.amazonaws.com:5432/jobportal
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=Kather123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
           
   db:
     image: 'postgres:13.1-alpine'
     container_name: db
     environment:
-      - POSTGRES_USER: postgres
-      - POSTGRES_PASSWORD: Kather@123
-      - POSTGRES_DB: jobportal
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Kather123
+      POSTGRES_DB: jobportal
