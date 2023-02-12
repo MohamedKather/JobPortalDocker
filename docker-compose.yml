@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   app:
-  #  image: 'demo_springboot-1.0.0:latest'
     build:
       context: .
     container_name: app
